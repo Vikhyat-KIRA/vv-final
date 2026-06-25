@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "773443742576",
+    "project_id": "vidyaverse-2026",
+    "storage_bucket": "vidyaverse-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773443742576:android:99bfbdb852815621a43db5",
+        "android_client_info": {
+          "package_name": "com.example.vidyaverse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAiiHH9-LEPlVI630_1gT6nA2wSJBPc9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
