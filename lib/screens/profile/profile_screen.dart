@@ -181,7 +181,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+        padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 16.0, bottom: 16.0 + MediaQuery.of(context).padding.bottom),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

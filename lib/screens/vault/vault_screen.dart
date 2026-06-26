@@ -281,7 +281,7 @@ class _VaultScreenState extends ConsumerState<VaultScreen> {
               // Folders GridView
               Expanded(
                 child: GridView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(bottom: 80),
+                  padding: EdgeInsets.symmetric(horizontal: 16).copyWith(bottom: MediaQuery.of(context).padding.bottom),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 16,

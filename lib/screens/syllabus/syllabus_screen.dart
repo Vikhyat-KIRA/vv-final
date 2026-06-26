@@ -178,7 +178,7 @@ class _SyllabusScreenState extends ConsumerState<SyllabusScreen> {
       ),
       body: subjects.isEmpty
           ? GridView.builder(
-              padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 100.0),
+              padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, MediaQuery.of(context).padding.bottom),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
@@ -189,7 +189,7 @@ class _SyllabusScreenState extends ConsumerState<SyllabusScreen> {
               itemBuilder: (context, index) => const ShimmerSubjectCard(),
             )
           : GridView.builder(
-              padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 100.0),
+              padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, MediaQuery.of(context).padding.bottom),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
