@@ -129,7 +129,7 @@ class _LevelUpWidgetState extends State<_LevelUpWidget> {
                     const Text(
                       'LEVEL UP!',
                       style: TextStyle(
-                        fontFamily: 'Playfair Display', // Headers font
+                        fontFamily: 'Space Grotesk', // Headers font
                         fontSize: 48,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -183,7 +183,7 @@ class _LevelUpWidgetState extends State<_LevelUpWidget> {
                             Text(
                               '${widget.newLevel}',
                               style: TextStyle(
-                                fontFamily: 'Playfair Display',
+                                fontFamily: 'Space Grotesk',
                                 fontSize: 72,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,

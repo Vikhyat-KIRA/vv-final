@@ -144,7 +144,7 @@ Only output the JSON array, no markdown fences.
         elevation: 0,
         title: Text(
           'Flashcards - ${widget.subject}',
-          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Playfair Display', fontWeight: FontWeight.bold),
+          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold),
         ),
         iconTheme: IconThemeData(color: AppColors.textPrimary),
       ),

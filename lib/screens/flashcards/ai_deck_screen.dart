@@ -214,7 +214,7 @@ class _AiDeckScreenState extends ConsumerState<AiDeckScreen> {
         title: Text(
           'AI Deck Generator',
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
           ),
@@ -298,7 +298,7 @@ class _AiDeckScreenState extends ConsumerState<AiDeckScreen> {
                   Text(
                     'Review AI Flashcards',
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -404,7 +404,7 @@ class _AiDeckScreenState extends ConsumerState<AiDeckScreen> {
                           style: TextStyle(
                             color: AppColors.background,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Playfair Display',
+                            fontFamily: 'Space Grotesk',
                             fontSize: 16,
                           ),
                         ),
@@ -489,7 +489,7 @@ class _AiDeckScreenState extends ConsumerState<AiDeckScreen> {
                           style: TextStyle(
                             color: AppColors.background,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Playfair Display',
+                            fontFamily: 'Space Grotesk',
                             fontSize: 16,
                           ),
                         ),

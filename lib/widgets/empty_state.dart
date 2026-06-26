@@ -110,7 +110,7 @@ class _EmptyStateState extends State<EmptyState> with SingleTickerProviderStateM
                 Text(
                   widget.title,
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,

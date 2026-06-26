@@ -244,7 +244,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color(0xFF0A0E1A),
+      scaffoldBackgroundColor: Colors.transparent,
       colorScheme: ColorScheme.dark(
         primary: gld,
         onPrimary: const Color(0xFF0A0E1A),
@@ -258,11 +258,11 @@ class AppTheme {
         onSurfaceVariant: const Color(0xFF94A3B8),
       ),
       textTheme: TextTheme(
-        displayLarge: GoogleFonts.playfairDisplay(color: gld, fontSize: 32, fontWeight: FontWeight.bold),
-        displayMedium: GoogleFonts.playfairDisplay(color: gld, fontSize: 28, fontWeight: FontWeight.bold),
-        displaySmall: GoogleFonts.playfairDisplay(color: const Color(0xFFF1F5F9), fontSize: 24, fontWeight: FontWeight.bold),
-        headlineMedium: GoogleFonts.playfairDisplay(color: const Color(0xFFF1F5F9), fontSize: 20, fontWeight: FontWeight.w600),
-        titleLarge: GoogleFonts.playfairDisplay(color: const Color(0xFFF1F5F9), fontSize: 18, fontWeight: FontWeight.w600),
+        displayLarge: GoogleFonts.jetBrainsMono(color: gld, fontSize: 32, fontWeight: FontWeight.bold),
+        displayMedium: GoogleFonts.spaceGrotesk(color: gld, fontSize: 28, fontWeight: FontWeight.bold),
+        displaySmall: GoogleFonts.spaceGrotesk(color: const Color(0xFFF1F5F9), fontSize: 24, fontWeight: FontWeight.bold),
+        headlineMedium: GoogleFonts.spaceGrotesk(color: const Color(0xFFF1F5F9), fontSize: 20, fontWeight: FontWeight.w600),
+        titleLarge: GoogleFonts.spaceGrotesk(color: const Color(0xFFF1F5F9), fontSize: 18, fontWeight: FontWeight.w600),
         bodyLarge: GoogleFonts.plusJakartaSans(color: const Color(0xFFF1F5F9), fontSize: 16),
         bodyMedium: GoogleFonts.plusJakartaSans(color: const Color(0xFF94A3B8), fontSize: 14),
         labelLarge: GoogleFonts.plusJakartaSans(color: const Color(0xFFF1F5F9), fontSize: 14, fontWeight: FontWeight.w500),
@@ -322,11 +322,11 @@ class AppTheme {
   // ── Shared helpers ──
   static TextTheme _baseTextTheme(Color primary, Color secondary) {
     return TextTheme(
-      displayLarge: GoogleFonts.playfairDisplay(color: primary, fontSize: 32, fontWeight: FontWeight.bold),
-      displayMedium: GoogleFonts.playfairDisplay(color: primary, fontSize: 28, fontWeight: FontWeight.bold),
-      displaySmall: GoogleFonts.playfairDisplay(color: primary, fontSize: 24, fontWeight: FontWeight.bold),
-      headlineMedium: GoogleFonts.playfairDisplay(color: primary, fontSize: 20, fontWeight: FontWeight.w600),
-      titleLarge: GoogleFonts.playfairDisplay(color: primary, fontSize: 18, fontWeight: FontWeight.w600),
+      displayLarge: GoogleFonts.jetBrainsMono(color: primary, fontSize: 32, fontWeight: FontWeight.bold),
+      displayMedium: GoogleFonts.spaceGrotesk(color: primary, fontSize: 28, fontWeight: FontWeight.bold),
+      displaySmall: GoogleFonts.spaceGrotesk(color: primary, fontSize: 24, fontWeight: FontWeight.bold),
+      headlineMedium: GoogleFonts.spaceGrotesk(color: primary, fontSize: 20, fontWeight: FontWeight.w600),
+      titleLarge: GoogleFonts.spaceGrotesk(color: primary, fontSize: 18, fontWeight: FontWeight.w600),
       bodyLarge: GoogleFonts.plusJakartaSans(color: primary, fontSize: 16),
       bodyMedium: GoogleFonts.plusJakartaSans(color: secondary, fontSize: 14),
       labelLarge: GoogleFonts.plusJakartaSans(color: primary, fontSize: 14, fontWeight: FontWeight.w500),

@@ -166,7 +166,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         title: Text(
           isPrivate ? 'My Profile' : 'Public Profile',
           style: const TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -209,7 +209,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         child: Text(
                           initial,
                           style: TextStyle(
-                            fontFamily: 'Playfair Display',
+                            fontFamily: 'Space Grotesk',
                             fontWeight: FontWeight.bold,
                             fontSize: 40,
                             color: accent,
@@ -222,7 +222,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   Text(
                     user.displayName,
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -261,7 +261,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             Text(
               '${user.rank} Tier',
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: accent,
@@ -305,7 +305,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             Text(
               'Academic Stats',
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -352,7 +352,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             Text(
               'Subject Progress',
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -366,7 +366,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             Text(
               'Unlocked Achievements',
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -381,7 +381,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               Text(
                 'Settings & Preferences',
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -436,7 +436,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               Text(
                 value,
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -913,7 +913,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       Text(
                         'Edit Profile',
                         style: TextStyle(
-                          fontFamily: 'Playfair Display',
+                          fontFamily: 'Space Grotesk',
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -1054,7 +1054,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               title: Text(
                 'AI Tutor Mode',
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
                 ),

@@ -172,7 +172,7 @@ class _AchievementToastWidgetState extends State<_AchievementToastWidget> with S
                           Text(
                             widget.achievement.name,
                             style: const TextStyle(
-                              fontFamily: 'Playfair Display',
+                              fontFamily: 'Space Grotesk',
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFFF0F0F5),

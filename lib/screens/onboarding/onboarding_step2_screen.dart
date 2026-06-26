@@ -101,7 +101,7 @@ class _OnboardingStep2ScreenState extends State<OnboardingStep2Screen> {
                 Text(
                   'Where are you right now?',
                   style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Space Grotesk',
                         fontSize: 26,
                       ),
                   textAlign: TextAlign.left,
@@ -203,7 +203,7 @@ class _OnboardingStep2ScreenState extends State<OnboardingStep2Screen> {
                               Text(
                                 status['label']!,
                                 style: TextStyle(
-                                  fontFamily: 'Playfair Display',
+                                  fontFamily: 'Space Grotesk',
                                   fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.textPrimary,

@@ -128,7 +128,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         appBar: AppBar(
           title: const Text(
             'Settings',
-            style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold),
+            style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold),
           ),
           backgroundColor: AppColors.background,
         ),
@@ -143,7 +143,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       appBar: AppBar(
         title: const Text(
           'Settings',
-          style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold),
+          style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold),
         ),
         backgroundColor: AppColors.background,
         elevation: 0,
@@ -160,7 +160,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           Text(
             'Appearance',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -314,7 +314,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           Text(
             'Notifications & Alerts',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,

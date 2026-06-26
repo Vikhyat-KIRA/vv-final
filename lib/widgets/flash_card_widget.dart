@@ -130,7 +130,7 @@ class _FlashCardWidgetState extends State<FlashCardWidget> with SingleTickerProv
               fontWeight: FontWeight.bold,
               color: isBack ? widget.accentColor : AppColors.textSecondary,
               letterSpacing: 1.5,
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
             ),
           ),
 
@@ -144,7 +144,7 @@ class _FlashCardWidgetState extends State<FlashCardWidget> with SingleTickerProv
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                   ),
                   textAlign: TextAlign.center,
                 ),

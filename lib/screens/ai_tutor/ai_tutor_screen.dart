@@ -90,7 +90,7 @@ class _AiTutorScreenState extends ConsumerState<AiTutorScreen> {
               Text(
                 'Select Subject',
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,

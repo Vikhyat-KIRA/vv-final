@@ -32,7 +32,7 @@ class PercentageDial extends StatelessWidget {
                   Text(
                     '${percentage.toInt()}%',
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,

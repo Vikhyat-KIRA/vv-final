@@ -159,7 +159,7 @@ class _OnboardingStep4ScreenState extends ConsumerState<OnboardingStep4Screen> {
               children: [
                 CircularProgressIndicator(color: accent),
                 SizedBox(height: 16),
-                Text('Finalizing Setup...', style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Playfair Display')),
+                Text('Finalizing Setup...', style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Space Grotesk')),
               ],
             ),
           )
@@ -186,7 +186,7 @@ class _OnboardingStep4ScreenState extends ConsumerState<OnboardingStep4Screen> {
                 Text(
                   'Vault Storage Setup',
                   style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Space Grotesk',
                         fontSize: 26,
                         color: AppColors.textPrimary,
                       ),
@@ -222,7 +222,7 @@ class _OnboardingStep4ScreenState extends ConsumerState<OnboardingStep4Screen> {
                             Text(
                               'Cloud Sync (Recommended)',
                               style: TextStyle(
-                                fontFamily: 'Playfair Display',
+                                fontFamily: 'Space Grotesk',
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -266,7 +266,7 @@ class _OnboardingStep4ScreenState extends ConsumerState<OnboardingStep4Screen> {
                             Text(
                               'Local Storage Only',
                               style: TextStyle(
-                                fontFamily: 'Playfair Display',
+                                fontFamily: 'Space Grotesk',
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,

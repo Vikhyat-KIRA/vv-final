@@ -80,7 +80,7 @@ Start directly with the title heading: "# Notes: [Topic Name]".
         elevation: 0,
         title: Text(
           'AI Notes - ${widget.subject}',
-          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Playfair Display', fontWeight: FontWeight.bold),
+          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold),
         ),
         iconTheme: IconThemeData(color: AppColors.textPrimary),
       ),
@@ -107,7 +107,7 @@ Start directly with the title heading: "# Notes: [Topic Name]".
                         Text(
                           'Generate AI Notes',
                           style: TextStyle(
-                            fontFamily: 'Playfair Display',
+                            fontFamily: 'Space Grotesk',
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -138,8 +138,8 @@ Start directly with the title heading: "# Notes: [Topic Name]".
               : Markdown(
                   data: _generatedNotes!,
                   styleSheet: MarkdownStyleSheet(
-                    h1: TextStyle(fontFamily: 'Playfair Display', color: AppColors.textPrimary, fontWeight: FontWeight.bold),
-                    h2: TextStyle(fontFamily: 'Playfair Display', color: AppColors.textPrimary, fontWeight: FontWeight.w600),
+                    h1: TextStyle(fontFamily: 'Space Grotesk', color: AppColors.textPrimary, fontWeight: FontWeight.bold),
+                    h2: TextStyle(fontFamily: 'Space Grotesk', color: AppColors.textPrimary, fontWeight: FontWeight.w600),
                     p: TextStyle(fontFamily: 'Plus Jakarta Sans', color: AppColors.textSecondary, fontSize: 14, height: 1.5),
                     listBullet: TextStyle(color: accent),
                   ),

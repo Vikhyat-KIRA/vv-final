@@ -51,7 +51,7 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen> {
               Text(
                 'New Flashcard Deck',
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -70,7 +70,7 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen> {
                 title: Text(
                   'Generate with AI',
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
                   ),
@@ -100,7 +100,7 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen> {
                 title: Text(
                   'Create Manually',
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
                   ),
@@ -131,7 +131,7 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen> {
         backgroundColor: AppColors.surface,
         title: Text(
           'Delete Deck?',
-          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Playfair Display'),
+          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Space Grotesk'),
         ),
         content: Text('Are you sure you want to delete "${deck.name}"?'),
         actions: [
@@ -162,7 +162,7 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen> {
         title: Text(
           'Flashcards Hub',
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
           ),
@@ -212,7 +212,7 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen> {
                   Text(
                     'No Flashcard Decks',
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -233,7 +233,7 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen> {
                       style: TextStyle(
                         color: AppColors.background,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Space Grotesk',
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
@@ -326,7 +326,7 @@ class _DeckCard extends StatelessWidget {
                     child: Text(
                       deck.subject.toUpperCase(),
                       style: TextStyle(
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Space Grotesk',
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                         color: accent,
@@ -345,7 +345,7 @@ class _DeckCard extends StatelessWidget {
               Text(
                 deck.name,
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,

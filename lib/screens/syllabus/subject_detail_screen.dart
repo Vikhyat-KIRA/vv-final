@@ -45,7 +45,7 @@ class SubjectDetailScreen extends ConsumerWidget {
           child: Text(
             '${activeSubject.emoji} ${activeSubject.name}',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
             ),

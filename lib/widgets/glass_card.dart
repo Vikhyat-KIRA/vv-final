@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../theme/colors.dart';
 
+enum CardElevation { standard, elevated, recessed }
+
 class GlassCard extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry? padding;
@@ -10,6 +12,7 @@ class GlassCard extends StatelessWidget {
   final double? blurSigma;
   final Color? backgroundColor;
   final Color? borderColor;
+  final CardElevation elevation;
 
   const GlassCard({
     super.key,
@@ -20,13 +23,33 @@ class GlassCard extends StatelessWidget {
     this.blurSigma,
     this.backgroundColor,
     this.borderColor,
+    this.elevation = CardElevation.standard,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bg = backgroundColor ?? AppColors.glassBackground(isDark);
-    final border = borderColor ?? AppColors.glassBorder(isDark);
+    
+    Color defaultBg;
+    Color defaultBorder;
+    
+    switch (elevation) {
+      case CardElevation.elevated:
+        defaultBg = AppColors.surfaceElevated;
+        defaultBorder = AppColors.borderEmphasis;
+        break;
+      case CardElevation.recessed:
+        defaultBg = AppColors.surfaceRecessed;
+        defaultBorder = AppColors.border;
+        break;
+      case CardElevation.standard:
+        defaultBg = AppColors.surface;
+        defaultBorder = AppColors.border;
+        break;
+    }
+
+    final bg = backgroundColor ?? defaultBg;
+    final border = borderColor ?? defaultBorder;
     final sigma = blurSigma ?? AppColors.glassBlurSigma;
 
     return Container(

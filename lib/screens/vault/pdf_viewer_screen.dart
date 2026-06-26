@@ -46,7 +46,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
                 Text(
                   'Vayu is reading...',
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                     color: AppColors.textPrimary,
@@ -126,7 +126,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
             Text(
               widget.file.name,
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -198,7 +198,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
         icon: Icon(Icons.psychology),
         label: Text(
           'Generate AI Notes',
-          style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Playfair Display'),
+          style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Space Grotesk'),
         ),
       ),
     );
@@ -299,7 +299,7 @@ class _GeneratedNotesSheetState extends ConsumerState<_GeneratedNotesSheet> {
                   Text(
                     'AI Study Notes',
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                       color: AppColors.textPrimary,
@@ -315,7 +315,7 @@ class _GeneratedNotesSheetState extends ConsumerState<_GeneratedNotesSheet> {
                     child: Text(
                       widget.file.subject,
                       style: TextStyle(
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Space Grotesk',
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: accent,
@@ -334,7 +334,7 @@ class _GeneratedNotesSheetState extends ConsumerState<_GeneratedNotesSheet> {
                   selectable: true,
                   styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
                     h2: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: accent,

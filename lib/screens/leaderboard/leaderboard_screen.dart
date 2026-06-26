@@ -31,7 +31,7 @@ class _LeaderboardScreenState extends ConsumerState<LeaderboardScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: const Text('Global Leaderboard', style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold)),
+        title: const Text('Global Leaderboard', style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold)),
         backgroundColor: AppColors.background,
         elevation: 0,
       ),
@@ -142,7 +142,7 @@ class _LeaderboardScreenState extends ConsumerState<LeaderboardScreen> {
               child: Text(
                 rank.toString(),
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 48,
                   fontWeight: FontWeight.bold,
                   color: badgeColor,

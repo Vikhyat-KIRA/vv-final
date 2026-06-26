@@ -107,7 +107,7 @@ class _VaultScreenState extends ConsumerState<VaultScreen> {
               Text(
                 'New Folder',
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -177,7 +177,7 @@ class _VaultScreenState extends ConsumerState<VaultScreen> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Text(
           'Delete Folder',
-          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Playfair Display'),
+          style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Space Grotesk'),
         ),
         content: Text(
           'Are you sure you want to delete "$folderName"? Files inside will not be deleted.',
@@ -238,7 +238,7 @@ class _VaultScreenState extends ConsumerState<VaultScreen> {
                 Text(
                   'The Vault',
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -437,7 +437,7 @@ class _SubjectFolderCard extends StatelessWidget {
                 Text(
                   subject,
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                     color: AppColors.textPrimary,

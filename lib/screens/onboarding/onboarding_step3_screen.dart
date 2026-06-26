@@ -114,7 +114,7 @@ class _OnboardingStep3ScreenState extends ConsumerState<OnboardingStep3Screen>
                 Text(
                   'Set Your Endgame',
                   style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Space Grotesk',
                         fontSize: 26,
                       ),
                 ),
@@ -224,7 +224,7 @@ class _OnboardingStep3ScreenState extends ConsumerState<OnboardingStep3Screen>
                               Text(
                                 '🧭 General Coach',
                                 style: TextStyle(
-                                  fontFamily: 'Playfair Display',
+                                  fontFamily: 'Space Grotesk',
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -277,7 +277,7 @@ class _OnboardingStep3ScreenState extends ConsumerState<OnboardingStep3Screen>
                               Text(
                                 '📚 Strict Syllabus',
                                 style: TextStyle(
-                                  fontFamily: 'Playfair Display',
+                                  fontFamily: 'Space Grotesk',
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,

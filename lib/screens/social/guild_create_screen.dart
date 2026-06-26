@@ -91,7 +91,7 @@ class _GuildCreateScreenState extends ConsumerState<GuildCreateScreen> {
           title: Text(
             'Guild Created!',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
             ),
@@ -191,7 +191,7 @@ class _GuildCreateScreenState extends ConsumerState<GuildCreateScreen> {
         title: const Text(
           'Create a Guild',
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
           ),
         ),

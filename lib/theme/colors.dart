@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 class AppColors {
   // Mutable theme-driven color tokens (non-const)
   static Color background = const Color(0xFFF8FAFC);
-  static Color surface = const Color(0xFFFFFFFF);
-  static Color surface2 = const Color(0xFFF1F5F9);
+  static Color surface = const Color(0xFFFFFFFF); // Card fill
+  static Color surfaceElevated = const Color(0xFFFFFFFF); // Higher priority
+  static Color surfaceRecessed = const Color(0xFFF1F5F9); // Ambient/bg info
+  static Color surface2 = const Color(0xFFF1F5F9); // Legacy, map to recessed
   static Color textPrimary = const Color(0xFF0F172A);
   static Color textSecondary = const Color(0xFF64748B);
-  static Color border = const Color(0xFFE2E8F0);
+  static Color border = const Color(0xFFE2E8F0); // Subtle border
+  static Color borderEmphasis = const Color(0xFFCBD5E1); // Elevated border
   static Color accentDefault = const Color(0xFF10B981);
 
   // Accent palette constants
@@ -25,11 +28,11 @@ class AppColors {
   static const Color info = Color(0xFF3B82F6);
   static const Color success = Color(0xFF22C55E);
 
-  // Glass-morphism helpers
+  // Glass-morphism helpers (now driven by the surface tiers, but keeping for compatibility)
   static Color glassBackground(bool isDark) =>
-      isDark ? Colors.white.withOpacity(0.12) : Colors.white.withOpacity(0.65);
+      isDark ? Colors.white.withOpacity(0.08) : Colors.white.withOpacity(0.72);
   static Color glassBorder(bool isDark) =>
-      isDark ? Colors.white.withOpacity(0.22) : Colors.white.withOpacity(0.45);
+      isDark ? Colors.white.withOpacity(0.12) : const Color(0xFFE2E8F0);
   static double glassBlurSigma = 24.0;
 
   // Vayu orb color per theme style
@@ -74,34 +77,46 @@ class AppColors {
 
     if (isDark) {
       if (themeStyle == 'darkGold') {
-        background = const Color(0xFF0A0E1A);
-        surface = const Color(0xFF141B2D);
-        surface2 = const Color(0xFF1E293B);
+        background = Colors.transparent; // Fixed: was opaque, blocking mesh
+        surface = Colors.white.withOpacity(0.08);
+        surfaceElevated = Colors.white.withOpacity(0.14);
+        surfaceRecessed = Colors.white.withOpacity(0.04);
+        surface2 = surfaceRecessed;
       } else {
         background = themeStyle == 'glass' ? Colors.transparent : const Color(0xFF0F172A);
-        surface = const Color(0xFF1E293B);
-        surface2 = const Color(0xFF334155);
+        surface = Colors.white.withOpacity(0.08);
+        surfaceElevated = Colors.white.withOpacity(0.14);
+        surfaceRecessed = Colors.white.withOpacity(0.04);
+        surface2 = surfaceRecessed;
       }
       textPrimary = const Color(0xFFF1F5F9);
       textSecondary = const Color(0xFF94A3B8);
-      border = const Color(0xFF475569);
+      border = Colors.white.withOpacity(0.12);
+      borderEmphasis = Colors.white.withOpacity(0.25);
     } else {
       if (themeStyle == 'gradient') {
         background = Colors.transparent;
-        surface = const Color(0xFFFFFFFF);
-        surface2 = const Color(0xFFECFDF5);
+        surface = Colors.white.withOpacity(0.72);
+        surfaceElevated = Colors.white.withOpacity(0.85);
+        surfaceRecessed = const Color(0xFFF1F5F9);
+        surface2 = surfaceRecessed;
       } else if (themeStyle == 'brutalist') {
         background = const Color(0xFFFAFAFA);
         surface = const Color(0xFFFFFFFF);
-        surface2 = const Color(0xFFF5F5F5);
+        surfaceElevated = const Color(0xFFFFFFFF);
+        surfaceRecessed = const Color(0xFFF5F5F5);
+        surface2 = surfaceRecessed;
       } else {
         background = themeStyle == 'glass' ? Colors.transparent : const Color(0xFFF8FAFC);
-        surface = const Color(0xFFFFFFFF);
-        surface2 = const Color(0xFFF1F5F9);
+        surface = Colors.white.withOpacity(0.72);
+        surfaceElevated = Colors.white.withOpacity(0.85);
+        surfaceRecessed = const Color(0xFFF1F5F9);
+        surface2 = surfaceRecessed;
       }
       textPrimary = const Color(0xFF0F172A);
       textSecondary = const Color(0xFF64748B);
       border = const Color(0xFFE2E8F0);
+      borderEmphasis = const Color(0xFFCBD5E1);
     }
 
     // Resolve accent color

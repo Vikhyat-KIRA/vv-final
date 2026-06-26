@@ -20,7 +20,7 @@ class DmListScreen extends ConsumerWidget {
       return Scaffold(
         backgroundColor: AppColors.background,
         appBar: AppBar(
-          title: const Text('Messages', style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold)),
+          title: const Text('Messages', style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold)),
           backgroundColor: AppColors.background,
         ),
         body: const Center(
@@ -35,7 +35,7 @@ class DmListScreen extends ConsumerWidget {
         title: const Text(
           'Messages',
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -104,7 +104,7 @@ class DmListScreen extends ConsumerWidget {
           const Text(
             'No messages yet',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -190,7 +190,7 @@ class DmListScreen extends ConsumerWidget {
               child: Text(
                 initial,
                 style: const TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   color: Colors.white,

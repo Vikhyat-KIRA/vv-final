@@ -36,7 +36,7 @@ class ErrorStateWidget extends StatelessWidget {
             Text(
               'Failed to load data',
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,

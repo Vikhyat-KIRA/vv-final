@@ -23,7 +23,7 @@ class GuildsScreen extends ConsumerWidget {
       return Scaffold(
         backgroundColor: AppColors.background,
         appBar: AppBar(
-          title: const Text('Guilds', style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold)),
+          title: const Text('Guilds', style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold)),
           backgroundColor: AppColors.background,
         ),
         body: const Center(
@@ -38,7 +38,7 @@ class GuildsScreen extends ConsumerWidget {
         title: const Text(
           'Study Guilds',
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -128,7 +128,7 @@ class GuildsScreen extends ConsumerWidget {
                 Text(
                   guild.name,
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -195,7 +195,7 @@ class GuildsScreen extends ConsumerWidget {
                 Text(
                   'Join or Create a Guild',
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -262,7 +262,7 @@ class GuildsScreen extends ConsumerWidget {
               title: Text(
                 'Join Study Guild',
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
                 ),
@@ -324,7 +324,7 @@ class GuildsScreen extends ConsumerWidget {
                           Text(
                             foundGuild!.name,
                             style: TextStyle(
-                              fontFamily: 'Playfair Display',
+                              fontFamily: 'Space Grotesk',
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                               color: AppColors.textPrimary,

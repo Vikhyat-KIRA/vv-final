@@ -48,8 +48,8 @@ class _AnimatedMeshBackgroundState extends ConsumerState<AnimatedMeshBackground>
     final accentColor = ref.watch(themeProvider);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Fall back to solid styling if brutalist or darkGold is active
-    if (themeStyle == ThemeStyle.brutalist || themeStyle == ThemeStyle.darkGold) {
+    // Fall back to solid styling only for brutalist
+    if (themeStyle == ThemeStyle.brutalist) {
       return Container(
         color: AppColors.background,
       );
@@ -57,7 +57,9 @@ class _AnimatedMeshBackgroundState extends ConsumerState<AnimatedMeshBackground>
 
     // Determine the base solid color underneath the mesh blobs
     Color baseColor;
-    if (isDark) {
+    if (themeStyle == ThemeStyle.darkGold) {
+      baseColor = const Color(0xFF0A0E1A);
+    } else if (isDark) {
       baseColor = const Color(0xFF0F172A); // slate-900
     } else {
       baseColor = themeStyle == ThemeStyle.gradient

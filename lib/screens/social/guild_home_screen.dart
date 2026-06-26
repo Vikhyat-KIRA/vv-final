@@ -90,7 +90,7 @@ class _GuildHomeScreenState extends ConsumerState<GuildHomeScreen> {
           ),
           title: const Text(
             'Invite Code',
-            style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold),
+            style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           content: Column(
@@ -238,7 +238,7 @@ class _GuildHomeScreenState extends ConsumerState<GuildHomeScreen> {
               Text(
                 _guild!.name,
                 style: const TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -522,7 +522,7 @@ class _GuildHomeScreenState extends ConsumerState<GuildHomeScreen> {
                     backgroundColor: avatarBgColor,
                     child: Text(
                       initial,
-                      style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Playfair Display'),
+                      style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Space Grotesk'),
                     ),
                   ),
                   title: Row(
@@ -836,7 +836,7 @@ class _GuildHomeScreenState extends ConsumerState<GuildHomeScreen> {
                           backgroundColor: avatarBgColor,
                           child: Text(
                             initial,
-                            style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Playfair Display'),
+                            style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Space Grotesk'),
                           ),
                         ),
                       ],

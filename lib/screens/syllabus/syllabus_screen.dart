@@ -48,7 +48,7 @@ class _SyllabusScreenState extends ConsumerState<SyllabusScreen> {
                 Text(
                   'Add New Subject',
                   style: TextStyle(
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -157,7 +157,7 @@ class _SyllabusScreenState extends ConsumerState<SyllabusScreen> {
       appBar: AppBar(
         title: Text(
           'Syllabus',
-          style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold),
+          style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold),
         ),
         backgroundColor: AppColors.background,
         actions: [

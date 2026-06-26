@@ -127,7 +127,7 @@ class _StudyModeScreenState extends ConsumerState<StudyModeScreen> {
         title: Text(
           widget.deck.name,
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
           ),
@@ -277,7 +277,7 @@ class _StudyModeScreenState extends ConsumerState<StudyModeScreen> {
               Text(
                 'Deck Completed!',
                 style: TextStyle(
-                  fontFamily: 'Playfair Display',
+                  fontFamily: 'Space Grotesk',
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -322,7 +322,7 @@ class _StudyModeScreenState extends ConsumerState<StudyModeScreen> {
                             Text(
                               '$masteredCount',
                               style: TextStyle(
-                                fontFamily: 'Playfair Display',
+                                fontFamily: 'Space Grotesk',
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF10B981),
@@ -347,7 +347,7 @@ class _StudyModeScreenState extends ConsumerState<StudyModeScreen> {
                             Text(
                               '$missedCount',
                               style: TextStyle(
-                                fontFamily: 'Playfair Display',
+                                fontFamily: 'Space Grotesk',
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.error,
@@ -367,7 +367,7 @@ class _StudyModeScreenState extends ConsumerState<StudyModeScreen> {
                         Text(
                           '+$_sessionXpEarned XP Earned',
                           style: TextStyle(
-                            fontFamily: 'Playfair Display',
+                            fontFamily: 'Space Grotesk',
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.orangeAccent,
@@ -395,7 +395,7 @@ class _StudyModeScreenState extends ConsumerState<StudyModeScreen> {
                       ),
                       child: Text(
                         'Study Again',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Playfair Display'),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Space Grotesk'),
                       ),
                     ),
                   ),
@@ -413,7 +413,7 @@ class _StudyModeScreenState extends ConsumerState<StudyModeScreen> {
                       ),
                       child: Text(
                         'Done',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Playfair Display'),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Space Grotesk'),
                       ),
                     ),
                   ),

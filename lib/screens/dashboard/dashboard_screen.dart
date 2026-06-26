@@ -306,53 +306,11 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
     final themeColor = ref.watch(themeProvider);
     final accent = themeColor;
     final themeState = themeColor as ThemeColor;
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: AppBar(
-        title: const Text('VidyaVerse',
-            style: TextStyle(
-                fontFamily: 'Playfair Display',
-                fontWeight: FontWeight.bold)),
-        backgroundColor: AppColors.background,
-        elevation: 0,
-        actions: [
-          _buildSyncIcon(),
-          const SizedBox(width: 8),
-          Consumer(
-            builder: (context, ref, child) {
-              final unreadCount =
-                  ref.watch(unreadConversationsProvider).value ?? 0;
-              return Stack(
-                clipBehavior: Clip.none,
-                alignment: Alignment.center,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.forum_outlined,
-                        color: AppColors.textPrimary),
-                    onPressed: () => context.push('/dms'),
-                  ),
-                  if (unreadCount > 0)
-                    Positioned(
-                      right: 8,
-                      top: 8,
-                      child: Container(
-                        padding: const EdgeInsets.all(2),
-                        decoration: const BoxDecoration(
-                          color: Colors.redAccent,
-                          shape: BoxShape.circle,
-                        ),
-                        constraints: const BoxConstraints(
-                            minWidth: 8, minHeight: 8),
-                      ),
-                    ),
-                ],
-              );
-            },
-          ),
-          const SizedBox(width: 16),
-        ],
-      ),
+      backgroundColor: Colors.transparent, // Background handled by App container (mesh)
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -360,6 +318,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
               padding: const EdgeInsets.all(24.0),
               sliver: SliverList(
                 delegate: SliverChildListDelegate([
+                  // -- Header --
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -367,50 +326,85 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Good morning, $_userName',
-                            style: TextStyle(
-                              fontFamily: 'Playfair Display',
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.textPrimary,
+                            'Good morning,',
+                            style: textTheme.bodyMedium?.copyWith(
+                              color: colorScheme.onSurfaceVariant,
                             ),
                           ),
-                          const SizedBox(height: 6),
                           Text(
-                            DateFormat.yMMMMEEEEd().format(DateTime.now()),
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: AppColors.textSecondary,
-                            ),
+                            _userName,
+                            style: textTheme.displaySmall,
                           ),
                         ],
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: themeState.urgencyBadgeColor,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Text(
-                          themeState.urgencyLabel,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 0.5,
+                      Row(
+                        children: [
+                          _buildSyncIcon(),
+                          const SizedBox(width: 8),
+                          Consumer(
+                            builder: (context, ref, child) {
+                              final unreadCount =
+                                  ref.watch(unreadConversationsProvider).value ?? 0;
+                              return Stack(
+                                clipBehavior: Clip.none,
+                                alignment: Alignment.center,
+                                children: [
+                                  IconButton(
+                                    icon: Icon(Icons.forum_outlined,
+                                        color: colorScheme.onSurface),
+                                    onPressed: () => context.push('/dms'),
+                                  ),
+                                  if (unreadCount > 0)
+                                    Positioned(
+                                      right: 8,
+                                      top: 8,
+                                      child: Container(
+                                        padding: const EdgeInsets.all(2),
+                                        decoration: const BoxDecoration(
+                                          color: Colors.redAccent,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        constraints: const BoxConstraints(
+                                            minWidth: 8, minHeight: 8),
+                                      ),
+                                    ),
+                                ],
+                              );
+                            },
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.15, end: 0, curve: Curves.easeOutQuad),
+                  const SizedBox(height: 12),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: themeState.urgencyBadgeColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        themeState.urgencyLabel,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                    ),
+                  ).animate().fadeIn(delay: 50.ms, duration: 400.ms).slideY(begin: 0.15, end: 0, curve: Curves.easeOutQuad),
+
                   if (_countdownStr.isNotEmpty) ...
                     [const SizedBox(height: 12),
                     Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 8),
                       decoration: BoxDecoration(
-                        color: AppColors.surface2,
+                        color: colorScheme.surfaceVariant,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Row(
@@ -419,207 +413,36 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                           Icon(Icons.alarm, color: accent, size: 16),
                           const SizedBox(width: 8),
                           Text(_countdownStr,
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.textPrimary)),
+                              style: textTheme.labelLarge?.copyWith(
+                                  color: colorScheme.onSurface)),
                         ],
                       ),
                     ).animate().fadeIn(delay: 100.ms, duration: 400.ms).slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad)],
+                  
                   const SizedBox(height: 24),
+                  
                   ExamCountdownCard(accentColor: accent)
                       .animate()
                       .fadeIn(delay: 150.ms, duration: 500.ms)
                       .slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad),
-                  const SizedBox(height: 20),
-                  GlassCard(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                          Row(
-                            children: [
-                              Text(
-                                  'Current: ${_currentPercent.toInt()}%',
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold)),
-                              const SizedBox(width: 8),
-                              Icon(Icons.arrow_forward,
-                                  color: accent, size: 16),
-                              const SizedBox(width: 8),
-                              Text('Target: ${_targetPercent.toInt()}%',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: accent)),
-                            ],
-                          ),
-                          const SizedBox(height: 16),
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              final totalWidth = constraints.maxWidth;
-                              final filledWidth =
-                                  totalWidth * (_currentPercent / 100);
-                              final markerPosition =
-                                  totalWidth * (_targetPercent / 100);
-                              return Stack(
-                                clipBehavior: Clip.none,
-                                children: [
-                                  Container(
-                                    height: 10,
-                                    width: totalWidth,
-                                    decoration: BoxDecoration(
-                                      color: AppColors.surface2,
-                                      borderRadius:
-                                          BorderRadius.circular(5),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 10,
-                                    width: filledWidth,
-                                    decoration: BoxDecoration(
-                                      color: accent,
-                                      borderRadius:
-                                          BorderRadius.circular(5),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    left: markerPosition - 1,
-                                    top: -4,
-                                    child: Container(
-                                      height: 18,
-                                      width: 2,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
-                          const SizedBox(height: 12),
-                          Text(
-                            deltaLabel(_currentPercent, _targetPercent),
-                            style: TextStyle(
-                                fontSize: 12,
-                                color: AppColors.textSecondary),
-                          ),
-                        ],
-                      ),
-                  ).animate().fadeIn(delay: 200.ms, duration: 500.ms).slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad),
-                  const SizedBox(height: 20),
-                  GlassCard(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                          Text(
-                            'Continue Where You Left Off',
-                            style: TextStyle(
-                                fontSize: 12,
-                                color: AppColors.textSecondary),
-                          ),
-                          const SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                children: [
-                                  Text(_lastSubject,
-                                      style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16)),
-                                  Text(_lastChapter,
-                                      style: TextStyle(
-                                          color: AppColors.textSecondary,
-                                          fontSize: 13)),
-                                ],
-                              ),
-                              TextButton(
-                                onPressed: () => context.go('/syllabus'),
-                                child: Text('Continue →',
-                                    style: TextStyle(color: accent)),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                  ).animate().fadeIn(delay: 250.ms, duration: 500.ms).slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad),
-                  const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () => context.push('/pomodoro'),
-                          icon: Icon(Icons.timer_outlined, color: accent),
-                          label: const Text('Focus Timer'),
-                          style: OutlinedButton.styleFrom(
-                            foregroundColor: AppColors.textPrimary,
-                            side: BorderSide(color: AppColors.surface2),
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 14),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16)),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () => context.push('/tutor'),
-                          icon: Icon(Icons.psychology_outlined,
-                              color: accent),
-                          label: const Text('AI Tutor'),
-                          style: OutlinedButton.styleFrom(
-                            foregroundColor: AppColors.textPrimary,
-                            side: BorderSide(color: AppColors.surface2),
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 14),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16)),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ).animate().fadeIn(delay: 300.ms, duration: 500.ms).slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad),
-                  const SizedBox(height: 16),
-                  SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton.icon(
-                      onPressed: () => context.push('/leaderboard'),
-                      icon: Icon(Icons.leaderboard_outlined, color: accent),
-                      label: const Text('Global Leaderboard'),
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: AppColors.textPrimary,
-                        side: BorderSide(color: AppColors.surface2),
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                      ),
-                    ),
-                  ).animate().fadeIn(delay: 350.ms, duration: 500.ms).slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad),
-                  const SizedBox(height: 32),
-                  Text(
-                    'Overall Progress Breakdown',
-                    style: TextStyle(
-                      fontFamily: 'Playfair Display',
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ).animate().fadeIn(delay: 400.ms, duration: 400.ms),
-                  const SizedBox(height: 16),
+                  
+                  const SizedBox(height: 24),
+                  
+                  // -- XP Ring --
                   Center(
                     child: SizedBox(
-                      width: 180,
-                      height: 180,
+                      width: 220,
+                      height: 220,
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
                           CustomPaint(
-                            size: const Size(180, 180),
+                            size: const Size(220, 220),
                             painter: _DonutChartPainter(
                               percent: _currentPercent,
+                              targetPercent: _targetPercent,
                               accentColor: accent,
+                              backgroundColor: colorScheme.surfaceVariant,
                             ),
                           ),
                           Column(
@@ -627,17 +450,15 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                             children: [
                               Text(
                                 '${_currentPercent.toInt()}%',
-                                style: const TextStyle(
-                                  fontFamily: 'Playfair Display',
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.bold,
+                                style: textTheme.displayMedium?.copyWith(
+                                  fontSize: 48,
                                 ),
                               ),
                               Text(
-                                'Complete',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: AppColors.textSecondary,
+                                'Syllabus Mastered',
+                                style: textTheme.labelMedium?.copyWith(
+                                  color: colorScheme.onSurfaceVariant,
+                                  letterSpacing: 1.2,
                                 ),
                               ),
                             ],
@@ -645,13 +466,144 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                         ],
                       ),
                     ),
-                  ).animate().fadeIn(delay: 450.ms, duration: 500.ms).scale(begin: const Offset(0.9, 0.9), curve: Curves.easeOutQuad),
+                  ).animate().fadeIn(delay: 200.ms, duration: 500.ms).scale(begin: const Offset(0.9, 0.9), curve: Curves.easeOutQuad),
+                  const SizedBox(height: 16),
+                  Center(
+                    child: Text(
+                      deltaLabel(_currentPercent, _targetPercent),
+                      style: textTheme.bodySmall?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ).animate().fadeIn(delay: 200.ms, duration: 500.ms),
+                  const SizedBox(height: 32),
+                  
+                  // -- Continue Where You Left Off --
+                  GlassCard(
+                    elevation: CardElevation.recessed,
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                          Text(
+                            'Continue Where You Left Off',
+                            style: textTheme.labelMedium?.copyWith(
+                              color: colorScheme.onSurfaceVariant,
+                              letterSpacing: 1.0,
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                  children: [
+                                    Text(_lastSubject,
+                                        style: textTheme.titleMedium?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                    const SizedBox(height: 4),
+                                    Text(_lastChapter,
+                                        style: textTheme.bodySmall?.copyWith(
+                                          color: colorScheme.onSurfaceVariant,
+                                        ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis),
+                                  ],
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () => context.go('/syllabus'),
+                                style: TextButton.styleFrom(
+                                  foregroundColor: accent,
+                                ),
+                                child: const Text('Continue →'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                  ).animate().fadeIn(delay: 250.ms, duration: 500.ms).slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad),
+                  
+                  const SizedBox(height: 32),
+                  
+                  // -- Action Buttons --
+                  Row(
+                    children: [
+                      Expanded(
+                        child: GlassCard(
+                          elevation: CardElevation.standard,
+                          padding: EdgeInsets.zero,
+                          child: InkWell(
+                            onTap: () => context.push('/pomodoro'),
+                            borderRadius: BorderRadius.circular(20),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 20),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.timer_outlined, color: accent, size: 32),
+                                  const SizedBox(height: 8),
+                                  Text('Focus', style: textTheme.labelLarge),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: GlassCard(
+                          elevation: CardElevation.standard,
+                          padding: EdgeInsets.zero,
+                          child: InkWell(
+                            onTap: () => context.push('/tutor'),
+                            borderRadius: BorderRadius.circular(20),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 20),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.psychology_outlined, color: accent, size: 32),
+                                  const SizedBox(height: 8),
+                                  Text('AI Tutor', style: textTheme.labelLarge),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: GlassCard(
+                          elevation: CardElevation.standard,
+                          padding: EdgeInsets.zero,
+                          child: InkWell(
+                            onTap: () => context.push('/leaderboard'),
+                            borderRadius: BorderRadius.circular(20),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 20),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.leaderboard_outlined, color: accent, size: 32),
+                                  const SizedBox(height: 8),
+                                  Text('Guilds', style: textTheme.labelLarge),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ).animate().fadeIn(delay: 300.ms, duration: 500.ms).slideY(begin: 0.12, end: 0, curve: Curves.easeOutQuad),
+                  
+                  const SizedBox(height: 48),
                   const SizedBox(height: 32),
                   Text(
                     'Recent Activity',
-                    style: TextStyle(
-                      fontFamily: 'Playfair Display',
-                      fontSize: 16,
+                    style: textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ).animate().fadeIn(delay: 500.ms, duration: 400.ms),
@@ -679,9 +631,8 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                           child: Center(
                               child: Text(
                                 'No recent activity yet',
-                                style: TextStyle(
-                                  color: AppColors.textSecondary,
-                                  fontSize: 13,
+                                style: textTheme.bodySmall?.copyWith(
+                                  color: colorScheme.onSurfaceVariant,
                                 ),
                               ),
                           ),
@@ -712,17 +663,20 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
 
   Widget _buildActivityTile(
       String subject, String chapter, String timeAgo, Color dotColor) {
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
+
     return GlassCard(
+      elevation: CardElevation.recessed,
       margin: const EdgeInsets.symmetric(vertical: 6),
       padding: EdgeInsets.zero,
       child: ListTile(
         leading: Icon(Icons.circle, size: 12, color: dotColor),
         title: Text(chapter,
-            style: const TextStyle(fontWeight: FontWeight.w600)),
-        subtitle: Text(subject, style: const TextStyle(fontSize: 12)),
+            style: textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600)),
+        subtitle: Text(subject, style: textTheme.bodySmall?.copyWith(color: colorScheme.onSurfaceVariant)),
         trailing: Text(timeAgo,
-            style: TextStyle(
-                fontSize: 12, color: AppColors.textSecondary)),
+            style: textTheme.labelSmall?.copyWith(color: colorScheme.onSurfaceVariant)),
       ),
     );
   }
@@ -772,28 +726,45 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
 
 class _DonutChartPainter extends CustomPainter {
   final double percent;
+  final double targetPercent;
   final Color accentColor;
+  final Color backgroundColor;
 
   const _DonutChartPainter({
     required this.percent,
+    required this.targetPercent,
     required this.accentColor,
+    required this.backgroundColor,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
-    final radius = (size.width - 16) / 2;
+    final radius = (size.width - 24) / 2;
+    
+    // Background track
     final backgroundPaint = Paint()
-      ..color = AppColors.surface2
+      ..color = backgroundColor
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 12;
+      ..strokeWidth = 16;
     canvas.drawCircle(center, radius, backgroundPaint);
-    final progressPaint = Paint()
-      ..color = accentColor
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 12
-      ..strokeCap = StrokeCap.round;
+
+    // Gradient Sweep for progress
     final sweepAngle = (percent / 100) * 2 * math.pi;
+    final gradient = SweepGradient(
+      colors: [accentColor.withOpacity(0.2), accentColor],
+      stops: const [0.0, 1.0],
+      startAngle: -math.pi / 2,
+      endAngle: -math.pi / 2 + sweepAngle,
+      tileMode: TileMode.clamp,
+    );
+    
+    final progressPaint = Paint()
+      ..shader = gradient.createShader(Rect.fromCircle(center: center, radius: radius))
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 16
+      ..strokeCap = StrokeCap.round;
+      
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
       -math.pi / 2,
@@ -801,10 +772,34 @@ class _DonutChartPainter extends CustomPainter {
       false,
       progressPaint,
     );
+
+    // Target marker
+    final targetAngle = -math.pi / 2 + (targetPercent / 100) * 2 * math.pi;
+    final markerPaint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 4
+      ..strokeCap = StrokeCap.round;
+
+    final markerOuterRadius = radius + 12;
+    final markerInnerRadius = radius - 12;
+    
+    final p1 = Offset(
+      center.dx + markerInnerRadius * math.cos(targetAngle),
+      center.dy + markerInnerRadius * math.sin(targetAngle),
+    );
+    final p2 = Offset(
+      center.dx + markerOuterRadius * math.cos(targetAngle),
+      center.dy + markerOuterRadius * math.sin(targetAngle),
+    );
+    
+    canvas.drawLine(p1, p2, markerPaint);
   }
 
   @override
   bool shouldRepaint(covariant _DonutChartPainter oldDelegate) =>
       oldDelegate.percent != percent ||
-      oldDelegate.accentColor != accentColor;
+      oldDelegate.targetPercent != targetPercent ||
+      oldDelegate.accentColor != accentColor ||
+      oldDelegate.backgroundColor != backgroundColor;
 }

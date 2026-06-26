@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
               'VIDYAVERSE',
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,

@@ -106,7 +106,7 @@ class _FolderScreenState extends State<FolderScreen> {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: AppColors.surface,
-        title: Text('Delete File?', style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Playfair Display')),
+        title: Text('Delete File?', style: TextStyle(color: AppColors.textPrimary, fontFamily: 'Space Grotesk')),
         content: Text('Are you sure you want to delete ${file.name}?', style: TextStyle(color: AppColors.textSecondary)),
         actions: [
           TextButton(
@@ -173,7 +173,7 @@ class _FolderScreenState extends State<FolderScreen> {
         title: Text(
           widget.subject,
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
           ),
@@ -233,7 +233,7 @@ class _FolderScreenState extends State<FolderScreen> {
                   Text(
                     'Folder is empty',
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -248,7 +248,7 @@ class _FolderScreenState extends State<FolderScreen> {
                   ElevatedButton.icon(
                     onPressed: _showUploadBottomSheet,
                     icon: Icon(Icons.cloud_upload_outlined, color: AppColors.background),
-                    label: Text('Upload File', style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Playfair Display')),
+                    label: Text('Upload File', style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Space Grotesk')),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.accentDefault,
                       foregroundColor: AppColors.background,
@@ -385,7 +385,7 @@ class _UploadBottomSheetState extends State<_UploadBottomSheet> {
             child: Text(
               'Upload to Vault',
               style: TextStyle(
-                fontFamily: 'Playfair Display',
+                fontFamily: 'Space Grotesk',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -560,7 +560,7 @@ class _UploadBottomSheetState extends State<_UploadBottomSheet> {
                     color: AppColors.background,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
-                    fontFamily: 'Playfair Display',
+                    fontFamily: 'Space Grotesk',
                   ),
                 ),
               ),

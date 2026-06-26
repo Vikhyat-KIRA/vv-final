@@ -103,7 +103,7 @@ class _OnboardingStep1ScreenState extends State<OnboardingStep1Screen> {
                   'VidyaVerse',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Space Grotesk',
                         fontSize: 32,
                         color: AppColors.textPrimary,
                       ),

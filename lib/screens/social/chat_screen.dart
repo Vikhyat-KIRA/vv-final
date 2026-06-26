@@ -189,7 +189,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
       child: Text(
         initial,
         style: TextStyle(
-          fontFamily: 'Playfair Display',
+          fontFamily: 'Space Grotesk',
           fontWeight: FontWeight.bold,
           fontSize: fontSize,
           color: Colors.white,
@@ -212,7 +212,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           Text(
             'Start of @${widget.otherUsername} conversation',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,

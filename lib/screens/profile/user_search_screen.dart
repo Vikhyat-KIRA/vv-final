@@ -64,7 +64,7 @@ class _UserSearchScreenState extends ConsumerState<UserSearchScreen> {
         title: Text(
           'Search Learners',
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
           ),
@@ -132,7 +132,7 @@ class _UserSearchScreenState extends ConsumerState<UserSearchScreen> {
           Text(
             hasText ? 'No learners found' : 'Find your classmates',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -192,7 +192,7 @@ class _UserSearchScreenState extends ConsumerState<UserSearchScreen> {
                   child: Text(
                     initial,
                     style: const TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                       color: Colors.white,

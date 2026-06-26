@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/subject_model.dart';
 import '../screens/syllabus/subject_detail_screen.dart';
-import '../theme/colors.dart';
 
 class SubjectCard extends StatelessWidget {
   final SubjectModel subject;
@@ -27,6 +26,8 @@ class SubjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeColor = _getTintByCompletion(subject.completionPercent);
     final completedChapters = subject.chapters.where((c) => c.status == 2).length;
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
 
     return Hero(
       tag: 'subject_${subject.id}',
@@ -35,7 +36,7 @@ class SubjectCard extends StatelessWidget {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: BorderSide(color: AppColors.surface2, width: 1),
+          side: BorderSide(color: colorScheme.outlineVariant, width: 1),
         ),
         child: InkWell(
           onTap: () {
@@ -59,20 +60,17 @@ class SubjectCard extends StatelessWidget {
               children: [
                 Text(
                   subject.emoji,
-                  style: TextStyle(fontSize: 28),
+                  style: const TextStyle(fontSize: 28),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   subject.name,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Playfair Display',
-                    fontSize: 15,
+                  style: textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 SizedBox(
                   width: 32,
                   height: 32,
@@ -80,15 +78,14 @@ class SubjectCard extends StatelessWidget {
                     value: subject.completionPercent / 100.0,
                     strokeWidth: 4,
                     valueColor: AlwaysStoppedAnimation<Color>(accentColor),
-                    backgroundColor: AppColors.surface2,
+                    backgroundColor: colorScheme.surfaceVariant,
                   ),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Text(
                   '$completedChapters/${subject.chapters.length} chapters',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: AppColors.textSecondary,
+                  style: textTheme.bodySmall?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
                   ),
                 ),
               ],

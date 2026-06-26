@@ -147,7 +147,7 @@ class _ManualDeckScreenState extends ConsumerState<ManualDeckScreen> {
         title: Text(
           'Manual Deck Creator',
           style: TextStyle(
-            fontFamily: 'Playfair Display',
+            fontFamily: 'Space Grotesk',
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
           ),
@@ -235,7 +235,7 @@ class _ManualDeckScreenState extends ConsumerState<ManualDeckScreen> {
                   Text(
                     'Add New Card',
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -293,7 +293,7 @@ class _ManualDeckScreenState extends ConsumerState<ManualDeckScreen> {
                   Text(
                     'Added Cards (${_cards.length})',
                     style: TextStyle(
-                      fontFamily: 'Playfair Display',
+                      fontFamily: 'Space Grotesk',
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -385,7 +385,7 @@ class _ManualDeckScreenState extends ConsumerState<ManualDeckScreen> {
                           style: TextStyle(
                             color: AppColors.background,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Playfair Display',
+                            fontFamily: 'Space Grotesk',
                             fontSize: 16,
                           ),
                         ),

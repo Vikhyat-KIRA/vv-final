@@ -129,7 +129,7 @@ class _PomodoroScreenState extends ConsumerState<PomodoroScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text('Focus Timer', style: TextStyle(fontFamily: 'Playfair Display', fontWeight: FontWeight.bold)),
+        title: Text('Focus Timer', style: TextStyle(fontFamily: 'Space Grotesk', fontWeight: FontWeight.bold)),
         backgroundColor: AppColors.background,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: AppColors.textPrimary),
@@ -177,7 +177,7 @@ class _PomodoroScreenState extends ConsumerState<PomodoroScreen> {
                       Text(
                         _formatTime(timerState.secondsRemaining),
                         style: TextStyle(
-                          fontFamily: 'Playfair Display',
+                          fontFamily: 'Space Grotesk',
                           fontSize: 56,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -361,7 +361,7 @@ class _FocusLockOverlayState extends State<FocusLockOverlay> {
           child: Text(
             'FOCUS LOCKED',
             style: TextStyle(
-              fontFamily: 'Playfair Display',
+              fontFamily: 'Space Grotesk',
               color: Colors.white,
               fontSize: 40,
               fontWeight: FontWeight.bold,
