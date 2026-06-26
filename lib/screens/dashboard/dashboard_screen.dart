@@ -651,7 +651,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                       );
                     },
                   ).animate().fadeIn(delay: 550.ms, duration: 500.ms).slideY(begin: 0.08, end: 0, curve: Curves.easeOutQuad),
-                  const SizedBox(height: 100),
                 ]),
               ),
             ),

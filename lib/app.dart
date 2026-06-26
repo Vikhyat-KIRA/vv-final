@@ -209,18 +209,59 @@ class ScaffoldWithNestedNavigation extends ConsumerWidget {
     final vayuColor = AppColors.vayuOrbColor(themeStyle.name, accentChoice);
 
     return Scaffold(
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 200),
-        switchInCurve: Curves.easeIn,
-        switchOutCurve: Curves.easeOut,
-        child: KeyedSubtree(
-          key: ValueKey<int>(navigationShell.currentIndex),
-          child: navigationShell,
-        ),
-        transitionBuilder: (child, animation) {
-          return FadeTransition(
-            opacity: animation,
-            child: child,
+      body: Builder(
+        builder: (context) {
+          final mq = MediaQuery.of(context);
+          // Calculate reserved height: 80 (nav bar) + 18 (orb offset) + 16 (clearance)
+          final requiredBottomPadding = 114.0 + mq.viewPadding.bottom;
+          
+          return MediaQuery(
+            data: mq.copyWith(
+              padding: mq.padding.copyWith(
+                bottom: requiredBottomPadding,
+              ),
+            ),
+            child: ShaderMask(
+              shaderCallback: (Rect bounds) {
+                // Fade out the last 40 pixels right before the reserved padding area.
+                // This ensures content dissolves elegantly instead of clipping abruptly.
+                final fadeStart = bounds.height - requiredBottomPadding - 40.0;
+                final fadeEnd = bounds.height - requiredBottomPadding;
+                
+                return LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: const [
+                    Colors.black,
+                    Colors.black,
+                    Colors.transparent,
+                    Colors.transparent,
+                  ],
+                  stops: [
+                    0.0,
+                    fadeStart / bounds.height,
+                    fadeEnd / bounds.height,
+                    1.0,
+                  ],
+                ).createShader(bounds);
+              },
+              blendMode: BlendMode.dstIn,
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 200),
+                switchInCurve: Curves.easeIn,
+                switchOutCurve: Curves.easeOut,
+                child: KeyedSubtree(
+                  key: ValueKey<int>(navigationShell.currentIndex),
+                  child: navigationShell,
+                ),
+                transitionBuilder: (child, animation) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
+              ),
+            ),
           );
         },
       ),
